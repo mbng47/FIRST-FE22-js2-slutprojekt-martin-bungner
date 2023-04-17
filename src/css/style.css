@@ -1,0 +1,265 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+:root {
+    --bgPink: hsl(350, 100%, 92%, 0.8);
+    --mainWhite: hsl(0, 0%, 100%, 0.7);
+    --aPink: hsl(330, 95%, 70%);
+    --hPink: hsl(320, 70%, 70%);
+    /* Oanvända */
+    --niceBlue: hsl(220, 95%, 70%);
+    --niceGreen: hsl(100, 80%, 85%, 0.8);
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    background-color: var(--bgPink);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#heading-logo {
+    font-family: Bebas Neue;
+    font-size: 3em;
+    margin: 0.5em;
+}
+
+main {
+    padding: 1em;
+    border-radius: 5px;
+    width: 90vw;
+    height: 75vh;
+    overflow: scroll;
+    background-color: var(--mainWhite);
+}
+
+
+/* ---------------------------------------------------------------- Index */
+
+#index-main {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#index-main article {
+    padding: 3em;
+    flex-basis: 45%;
+    height: 70%;
+}
+
+#index-divide-line {
+    border: 1px solid hsl(350, 100%, 90%);
+    height: 60%;
+}
+
+#welcome-article {
+    margin-left: 3em;
+}
+
+#welcome-article h2 {
+    margin-bottom: 1em;
+}
+
+#welcome-article p {
+    line-height: 1.5em;
+}
+
+#login-article {
+    margin-left: 2em;
+}
+
+#login-article h2 {
+    margin-bottom: 1em;
+}
+
+#login-form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.5em;
+}
+
+#login-form input {
+    max-width: 50%;
+    line-height: 1.5em;
+}
+
+#login-form button {
+    margin-top: 0.5em;
+    max-width: 20%;
+}
+
+#login-form input,
+button {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.2em;
+}
+
+#login-article p {
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+#register-link {
+    text-decoration: none;
+    color: var(--aPink);
+    display: block;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+#register-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ---------------------------------------------------------------- RegisterAcc */
+
+#register-main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: normal;
+    align-items: center;
+}
+
+#register-main h2 {
+    margin-top: 4em;
+    margin-left: 5em;
+    margin-bottom: 1em;
+    align-self: normal;
+}
+
+#register-article {
+    width: 80%;
+    margin-left: 3em;
+    padding: 1em;
+    justify-self: center;
+}
+
+#register-form {
+    justify-self: center;
+}
+
+#reg-username,
+#reg-password {
+    display: block;
+    margin: 0.5em;
+}
+
+#register-form img {
+    max-width: 12%;
+}
+
+#register-form input,
+button {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.2em;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+}
+
+
+/* ---------------------------------------------------------------- Feed */
+
+#feed-main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 5fr;
+}
+
+#community-section {
+    grid-area: 2 / 1 / span 1 / span 1;
+    overflow: scroll !important;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#community-section>ul {
+    margin-top: 1em;
+    font-family: Bebas Neue;
+    font-size: 2em;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+    list-style: none;
+}
+
+#community-section>ul>* {
+    font-family: normal;
+    font-size: 0.6em;
+    align-self: center;
+    color: var(--aPink);
+}
+
+#community-section>ul>*:hover {
+    text-decoration: underline;
+}
+
+#active-user-head {
+    grid-area: 1 / 2 / span 1 / span 1;
+    padding-right: 3em;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: end;
+    align-items: center;
+    gap: 2em;
+    border-bottom: 2px solid hsl(350, 100%, 90%);
+}
+
+#active-dot {
+    display: inline-block;
+    ;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: rgb(70, 210, 70);
+}
+
+#user-section {
+    grid-area: 2 / 2 / span 1 / span 1;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+#user-section>* {
+    padding: 1em;
+}
+
+#user-info {
+    grid-area: 1 / 2 / span 1 / span 1;
+    padding-top: 2em;
+    overflow: scroll !important;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: normal;
+    align-items: center;
+    gap: 1em;
+    text-align: center;
+}
+
+#user-content {
+    grid-area: 1 / 1 / span 1 / span 1;
+    max-height: 55vh;
+    overflow: scroll;
+
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+#posts-input-container{
+    margin-bottom: 0.5em;
+}
