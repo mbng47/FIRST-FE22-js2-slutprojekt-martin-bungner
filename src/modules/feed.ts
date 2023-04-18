@@ -35,17 +35,23 @@ function getUsersList(usersDB) {
 
     usersDB.forEach((user) => {
 
-        const liUser: HTMLLIElement = document.createElement('li');
-        liUser.innerText = user.username;
-        ((document.getElementById('users-ul')) as HTMLUListElement).append(liUser);
+        if(user !== null){
 
-        liUser.addEventListener('click', () => {
-            displayUser(user);
-        })
+            const liUser: HTMLLIElement = document.createElement('li');
+            liUser.innerText = user.username;
+            ((document.getElementById('users-ul')) as HTMLUListElement).append(liUser);
+    
+            liUser.addEventListener('click', () => {
+                displayUser(user);
+            })
+    
+            if (user.username == activeUserObj.username) {
+                displayUser(user);
+            }
 
-        if (user.username == activeUserObj.username) {
-            displayUser(user);
         }
+
+
     });
 }
 

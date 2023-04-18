@@ -16,10 +16,14 @@ async function userExists(newUser): Promise<boolean> {
     let exists: boolean = false;
     const users = await fetchDB();
 
+
+
     for (const user of users) {
-        if (user.username === newUser.username) {
-            exists = true;
-            break;
+        if (user !== null) {
+            if (user.username === newUser.username) {
+                exists = true;
+                break;
+            }
         }
     }
 
@@ -71,10 +75,12 @@ async function loggedInUser(activeUserObj): Promise<void> {
     let index;
 
     dbUsers.forEach((user, i) => {
+        if (user !== null) {
 
-        if (user.username == username) {
-            if (user.password == password) {
-                index = i;
+            if (user.username == username) {
+                if (user.password == password) {
+                    index = i;
+                }
             }
         }
     })
@@ -97,7 +103,7 @@ async function deleteUser(index): Promise<void> {
 }
 
 
-async function addNewPost(newPost, index){
+async function addNewPost(newPost, index) {
 
     console.log(`funkar, nu inne på användare med index ${index} i database`);
     console.log(`detta vill jag lägga till: ${newPost}`);
