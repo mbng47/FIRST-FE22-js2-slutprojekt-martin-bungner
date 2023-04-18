@@ -37,14 +37,16 @@ async function loginUser(user): Promise<void> {
 
     dbUsers.forEach((user) => {
 
-        if (user.username == username) {
-            if (user.password == password) {
-                const jsonString = JSON.stringify(user);
-                sessionStorage.setItem('activeUser', jsonString);
-                window.location.assign('./html/feed.html');
-            }
-            else {
-                alert('Wrong password');
+        if (user !== null) {
+            if (user.username == username) {
+                if (user.password == password) {
+                    const jsonString = JSON.stringify(user);
+                    sessionStorage.setItem('activeUser', jsonString);
+                    window.location.assign('./html/feed.html');
+                }
+                else {
+                    alert('Wrong password');
+                }
             }
         }
     })
